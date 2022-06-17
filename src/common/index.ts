@@ -1,1 +1,2 @@
-export default undefined;
+export * from './useData';
+export * from './data';
