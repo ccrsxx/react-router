@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/learn-react-router/static/css/main.afee217d.css",
+    "main.js": "/learn-react-router/static/js/main.854d75c8.js",
+    "index.html": "/learn-react-router/index.html",
+    "main.afee217d.css.map": "/learn-react-router/static/css/main.afee217d.css.map",
+    "main.854d75c8.js.map": "/learn-react-router/static/js/main.854d75c8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.afee217d.css",
+    "static/js/main.854d75c8.js"
+  ]
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.afee217d.css","mappings":"AAAA;;CAAA,49JACA,qSACA,q3DAFA,4F,CCAA,wBDAA,qE,CCAA,kCDAA,mE,CCAA,6BDAA,0Y,CCAA,2CDAA,gD,CCAA,qCDAA,oX,CCAA,4CDAA,2E,CCAA,6CDAA,0Y","sources":["index.scss","../<no source>"],"sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n"],"names":[],"sourceRoot":""}
