@@ -1,12 +1,6 @@
 import { useOutletContext } from 'react-router-dom';
-
-interface Invoice {
-  name: string;
-  number: number;
-  amount: string;
-  due: string;
-}
+import type { IInvoice } from '../types';
 
 export function useData() {
-  return useOutletContext<Invoice[]>();
+  return useOutletContext<IInvoice[]>();
 }

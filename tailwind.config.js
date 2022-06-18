@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        fade: 'fade 500ms ease-in-out'
+        fade: 'fade 500ms ease-in-out',
+        'fade-up': 'fade-up 500ms ease-in-out'
       },
       keyframes: {
         fade: {
@@ -13,6 +14,16 @@ module.exports = {
           },
           to: {
             opacity: 1
+          }
+        },
+        'fade-up': {
+          from: {
+            opacity: 0,
+            transform: 'translateY(-20px)'
+          },
+          to: {
+            opacity: 1,
+            transform: 'translate(0)'
           }
         }
       }
