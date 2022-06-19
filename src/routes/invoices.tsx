@@ -1,9 +1,11 @@
-import { useSearchParams, NavLink, Outlet } from 'react-router-dom';
-import { useData } from '../common';
+import { useContext } from 'react';
+import { useSearchParams, Outlet } from 'react-router-dom';
+import { QueryNavLink } from '../components';
+import { InvoiceContext } from '../common';
 
 export function Invoices() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const invoices = useData();
+  const { invoices } = useContext(InvoiceContext);
 
   return (
     <main className='flex w-full max-w-xs flex-1 animate-fade flex-col items-center gap-8'>
@@ -12,7 +14,7 @@ export function Invoices() {
           Welcome to the Invoices!
         </h2>
         <input
-          className='rounded-md border-2 border-pink-400 py-1 px-2 transition-all
+          className='rounded-md border-2 border-pink-400 py-1 px-2 transition
                      focus:outline-none focus:ring-2 focus:ring-green-400 
                      focus:ring-offset-2'
           type='text'
@@ -42,7 +44,7 @@ export function Invoices() {
               )
               .map(({ name, number }) => (
                 <li key={number}>
-                  <NavLink
+                  <QueryNavLink
                     className={({ isActive }) =>
                       `${
                         isActive && 'font-medium text-blue-700'
@@ -51,7 +53,7 @@ export function Invoices() {
                     to={`/invoices/${number}`}
                   >
                     <span>🗒️</span> {name}
-                  </NavLink>
+                  </QueryNavLink>
                 </li>
               ))}
           </ul>
