@@ -1,11 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { App } from './App';
 import { EmptyInvoice, EmptyPage } from './components';
 import { Invoices, Invoice, Expenses } from './routes';
 
 export function RouteSwitch() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<App />}>
           <Route path='expenses' element={<Expenses />} />
@@ -16,6 +16,6 @@ export function RouteSwitch() {
           <Route path='*' element={<EmptyPage />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
