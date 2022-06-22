@@ -1,12 +1,18 @@
-import { useContext } from 'react';
-import { useSearchParams, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { QueryNavLink } from '../components';
-import { InvoiceContext } from '../common';
+import type { IInvoices } from '../types';
 
-export function Invoices() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { invoices } = useContext(InvoiceContext);
+interface InvoicesProps {
+  invoices: IInvoices;
+  paramsValue: string;
+  handleParamsChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
+export function Invoices({
+  invoices,
+  paramsValue,
+  handleParamsChange
+}: InvoicesProps) {
   return (
     <main className='flex w-full max-w-xs flex-1 animate-fade flex-col items-center gap-8'>
       <header className='flex flex-col gap-4'>
@@ -18,15 +24,11 @@ export function Invoices() {
                      focus:outline-none focus:ring-2 focus:ring-green-400 
                      focus:ring-offset-2'
           type='text'
-          name='search'
           id='search'
+          name='search'
           placeholder='Search invoice'
-          value={searchParams.get('filter') ?? ''}
-          onChange={({
-            target: { value }
-          }: React.ChangeEvent<HTMLInputElement>) =>
-            value ? setSearchParams({ filter: value }) : setSearchParams({})
-          }
+          value={paramsValue}
+          onChange={handleParamsChange}
         />
         <nav>
           <ul className='flex flex-col gap-4'>
@@ -35,12 +37,7 @@ export function Invoices() {
                 name
                   .toLowerCase()
                   .replace(/\s/g, '')
-                  .includes(
-                    searchParams
-                      .get('filter')
-                      ?.toLowerCase()
-                      .replace(/\s/g, '') ?? ''
-                  )
+                  .includes(paramsValue.toLowerCase().replace(/\s/g, ''))
               )
               .map(({ name, number }) => (
                 <li key={number}>

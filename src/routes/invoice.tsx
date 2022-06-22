@@ -1,17 +1,16 @@
-import { useContext } from 'react';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
-import { InvoiceContext, getInvoice, deleteInvoice } from '../common';
+import { useParams } from 'react-router-dom';
 import type { IInvoice } from '../types';
 
-export function Invoice() {
-  const { invoices, setInvoices } = useContext(InvoiceContext);
-  const { invoiceId } = useParams();
-  const { search } = useLocation();
+interface InvoiceProps {
+  getInvoice: (id: number) => IInvoice | null;
+  deleteInvoice: (id: number) => () => void;
+}
 
-  const navigate = useNavigate();
+export function Invoice({ getInvoice, deleteInvoice }: InvoiceProps) {
+  const { invoiceId } = useParams();
 
   const { name, number, amount, due } =
-    getInvoice(invoices, parseInt(invoiceId!, 10)) ?? {};
+    getInvoice(parseInt(invoiceId!, 10)) ?? {};
 
   return (
     <div
@@ -28,12 +27,7 @@ export function Invoice() {
               className='rounded-md bg-red-200 px-1 text-base transition 
                          hover:brightness-110 active:scale-90'
               type='button'
-              onClick={() => {
-                setInvoices((prevInvoice: IInvoice[]) =>
-                  deleteInvoice(prevInvoice, number!)
-                );
-                navigate(`/invoices${search}`);
-              }}
+              onClick={deleteInvoice(number!)}
             >
               <span>🔫</span>
             </button>

@@ -1,3 +1,5 @@
+import type { IInvoices } from '../types';
+
 export const invoices = [
   {
     name: 'Santa Monica',

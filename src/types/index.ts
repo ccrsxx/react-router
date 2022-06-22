@@ -1,2 +1,2 @@
-export * from './IInvoiceContext';
+export * from './IInvoices';
 export * from './IInvoice';
