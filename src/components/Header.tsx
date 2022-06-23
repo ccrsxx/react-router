@@ -23,7 +23,7 @@ export function Header() {
               'scale-110 font-bold text-black ring-2 ring-pink-400 ring-offset-2'
             } w-full max-w-xs rounded-md bg-green-400 px-2 py-1 text-center transition`
           }
-          to='/expenses'
+          to='expenses'
         >
           Expenses
         </NavLink>
@@ -34,7 +34,7 @@ export function Header() {
               'scale-110 font-bold text-black ring-2 ring-pink-400 ring-offset-2'
             } w-full max-w-xs rounded-md bg-green-400 px-2 py-1 text-center transition`
           }
-          to='/invoices'
+          to='invoices'
         >
           Invoices
         </NavLink>
