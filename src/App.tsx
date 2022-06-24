@@ -6,26 +6,29 @@ import {
   useNavigate,
   useLocation
 } from 'react-router-dom';
-import { invoices as invoicesData } from './common';
+import { invoices as invoicesData, getData, deleteData } from './common';
 import { Header, Footer, EmptyInvoice, EmptyPage } from './components';
 import { Homepage, Invoices, Invoice, Expenses } from './routes';
 
 export function App() {
+  const [count, setCount] = useState(0);
   const [invoices, setInvoices] = useState(invoicesData);
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [navigate, { search }] = [useNavigate(), useLocation()];
+
+  const incrementCount = () => setCount(count + 1);
+  const decrementCount = () => setCount(count - 1);
 
   const handleParamsChange = ({
     target: { value }
   }: React.ChangeEvent<HTMLInputElement>) =>
     value ? setSearchParams({ filter: value }) : setSearchParams({});
 
-  const getInvoice = (id: number) =>
-    invoices.find(({ number }) => number === id) ?? null;
+  const getInvoice = (id: number) => getData(invoices, id);
 
   const deleteInvoice = (id: number) => () => {
-    setInvoices(invoices.filter(({ number }) => number !== id));
+    setInvoices(deleteData(invoices, id));
     navigate(`/invoices${search}`);
   };
 
@@ -36,7 +39,16 @@ export function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Homepage />} />
-        <Route path='expenses' element={<Expenses />} />
+        <Route
+          path='expenses'
+          element={
+            <Expenses
+              count={count}
+              incrementCount={incrementCount}
+              decrementCount={decrementCount}
+            />
+          }
+        />
         <Route
           path='invoices'
           element={

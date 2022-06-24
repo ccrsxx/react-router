@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test App component matches previous snapshot 1`] = `
+<div
+  class="flex min-h-screen flex-col items-center gap-6 py-8"
+>
+  <header
+    class="flex flex-col items-center gap-4"
+  >
+    <h1
+      class="text-2xl font-bold"
+    >
+      Welcome to React Router!
+    </h1>
+    <nav
+      class="flex w-full gap-4 border-b-2 pb-4 text-white"
+    >
+      <a
+        aria-current="page"
+        class="scale-110 font-bold text-black ring-2 ring-pink-400 ring-offset-2 w-full max-w-xs rounded-md bg-green-400 px-2 py-1 text-center transition"
+        href="/"
+      >
+        App
+      </a>
+      <a
+        class="false w-full max-w-xs rounded-md bg-green-400 px-2 py-1 text-center transition"
+        href="/expenses"
+      >
+        Expenses
+      </a>
+      <a
+        class="false w-full max-w-xs rounded-md bg-green-400 px-2 py-1 text-center transition"
+        href="/invoices"
+      >
+        Invoices
+      </a>
+    </nav>
+  </header>
+  <main
+    class="flex flex-1 animate-fade flex-col gap-4 text-center"
+  >
+    <h2
+      class="border-b pb-1 text-lg font-medium"
+    >
+      Welcome to the my first React Router App!
+    </h2>
+    <p>
+      this is from form / (root of the project)
+    </p>
+  </main>
+  <footer
+    class="text-lg"
+  >
+    <p>
+      Made with
+       
+      <span
+        aria-label="heart"
+        role="img"
+      >
+        ❤️
+         
+      </span>
+      by
+       
+      <a
+        class="rounded px-1 pb-[2px] font-medium text-blue-400 decoration-transparent underline-offset-2 transition-all duration-300 hover:underline hover:decoration-pink-200 hover:brightness-125  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-400  focus-visible:brightness-125"
+        href="https://github.com/ccrsxx"
+      >
+        ccrsxx
+      </a>
+    </p>
+  </footer>
+</div>
+`;

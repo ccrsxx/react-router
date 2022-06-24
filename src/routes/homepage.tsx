@@ -1,6 +1,6 @@
 export function Homepage() {
   return (
-    <main className='flex flex-1 animate-fade flex-col gap-4'>
+    <main className='flex flex-1 animate-fade flex-col gap-4 text-center'>
       <h2 className='border-b pb-1 text-lg font-medium'>
         Welcome to the my first React Router App!
       </h2>
