@@ -16,7 +16,8 @@ function Dashboard() {
     <div>
       <h1>Dashboard</h1>
       <nav>
-        <Link to='invoices'>Invoices</Link> <Link to='team'>Team</Link>
+        <Link to='invoices'>Invoices</Link>
+        <Link to='team'>Team</Link>
       </nav>
       <hr />
       <Outlet />

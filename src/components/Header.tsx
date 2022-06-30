@@ -3,7 +3,9 @@ import { NavLink } from 'react-router-dom';
 export function Header() {
   return (
     <header className='flex flex-col items-center gap-4'>
-      <h1 className='text-2xl font-bold'>Welcome to React Router!</h1>
+      <h1 data-testid='title' className='text-2xl font-bold'>
+        Welcome to React Router!
+      </h1>
       <nav className='flex w-full gap-4 border-b-2 pb-4 text-white'>
         <NavLink
           className={({ isActive }) =>

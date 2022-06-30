@@ -9,6 +9,7 @@ exports[`test App component matches previous snapshot 1`] = `
   >
     <h1
       class="text-2xl font-bold"
+      data-testid="title"
     >
       Welcome to React Router!
     </h1>

@@ -47,7 +47,7 @@ export function Invoices({
                         isActive && 'font-medium text-blue-700'
                       } transition-colors hover:text-blue-400`
                     }
-                    to={`/invoices/${number}`}
+                    to={String(number)}
                   >
                     <span>🗒️</span> {name}
                   </QueryNavLink>

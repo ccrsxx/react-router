@@ -14,6 +14,11 @@ describe('test App component', () => {
     expect(container).toMatchSnapshot();
   });
 
+  it('renders the header', () => {
+    const header = screen.getByTestId('title');
+    expect(header.textContent).toMatch(/react router/i);
+  });
+
   it('can go to multiple routes', () => {
     const homepageButton = screen.getByRole('link', { name: /app/i });
     const expensesButton = screen.getByRole('link', { name: /expenses/i });
@@ -50,8 +55,8 @@ describe('test App component', () => {
 
     userEvent.click(expensesButton);
 
-    const incrementButton = screen.getByText(/increment/i);
-    const decrementButton = screen.getByText(/decrement/i);
+    const incrementButton = screen.getByRole('button', { name: /increment/i });
+    const decrementButton = screen.getByRole('button', { name: /decrement/i });
 
     clickCount(1, incrementButton);
     expect(getSpanCount()).toBe('1');
